@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794894960861",
+    "project_id": "ukiyo-eb82f",
+    "storage_bucket": "ukiyo-eb82f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794894960861:android:d15ded1bbddd19d5fff334",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794894960861-t51pgmih834vjj3ec5q1iaq0nvb0eomo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEHRAwJL7cV2mIH4T2xEoevZDvGMszQnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794894960861-t51pgmih834vjj3ec5q1iaq0nvb0eomo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="280dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/register_icon" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/name_text"
+        android:ems="10"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/full_name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/email_text"
+        android:ems="10"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dob_text"
+        android:ems="10"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/dob"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/phone_text"
+        android:ems="10"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/phn"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/passf"
+        android:ems="10"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/pass"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="25sp" />
+
+    <ImageButton
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bttn"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/gotologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:text="@string/logstr"
+        android:textAlignment="center"
+        android:textColor="#E1E1E1"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

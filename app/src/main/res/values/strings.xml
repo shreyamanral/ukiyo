@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ukiyo</string>
+    <string name="full_name">Name</string>
+    <string name="email">Email</string>
+    <string name="dob">DOB</string>
+    <string name="phn">Phone Number</string>
+    <string name="pass">Password</string>
+    <string name="register">Sign Up</string>
+    <string name="todo">TODO</string>
+    <string name="frgtstr">Forgot Password?</string>
+    <string name="signstr">Don\'t have an account? Sign Up</string>
+    <string name="logstr">Already have an account? Login</string>
+    <string name="signout">Signout</string>
+    <string name="textview">TextView</string>
+    <string name="username">Derek Doyle</string>
+</resources>
