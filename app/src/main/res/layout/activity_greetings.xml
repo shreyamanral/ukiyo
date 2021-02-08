@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bepolite_jap"
-    tools:context=".BePolite">
+    android:background="@drawable/greetings_jap"
+    tools:context=".greetings">
 
     <ImageButton
-        android:id="@+id/sp1"
+        android:id="@+id/sg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/speaker"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.225" />
 
     <ImageButton
-        android:id="@+id/sp2"
+        android:id="@+id/sg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/speaker"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.378" />
 
     <ImageButton
-        android:id="@+id/sp3"
+        android:id="@+id/sg3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/speaker"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.52" />
 
     <ImageButton
-        android:id="@+id/sp4"
+        android:id="@+id/sg4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/speaker"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.67" />
 
     <ImageButton
-        android:id="@+id/sp5"
+        android:id="@+id/sg5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/speaker"
@@ -65,10 +65,10 @@
         app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <ImageButton
-        android:id="@+id/bck_cdsh"
+        android:id="@+id/g_to_cp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bck_blk"

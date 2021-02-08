@@ -32,5 +32,29 @@ public class CommonPhrases extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        greeting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,greetings.class);
+                startActivity(i);
+            }
+        });
+
+        askq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,Ask_Questions.class);
+                startActivity(i);
+            }
+        });
+
+        direc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,Directions.class);
+                startActivity(i);
+            }
+        });
     }
 }

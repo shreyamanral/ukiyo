@@ -24,8 +24,7 @@ public class Translation extends AppCompatActivity {
     private EditText intxt;
     private ImageButton translateBtn;
     private String instr;
-    //String text = "Hello How are you";
-    FirebaseTranslator translator;
+    private static final String TAG = "LangID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,45 +43,6 @@ public class Translation extends AppCompatActivity {
             }
         });
     }
-
-        /*FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder().setSourceLanguage(FirebaseTranslateLanguage.EN)
-                .setTargetLanguage(FirebaseTranslateLanguage.HI)
-                .build();
-        translator = FirebaseNaturalLanguage.getInstance().getTranslator(options);
-        translator.downloadModelIfNeeded().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void v) {
-                // Model downloaded successfully. Okay to start translating.
-                // (Set a flag, unhide the translation UI, etc.)
-                startTranslate(translator,text);
-            }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Model couldn’t be downloaded or other internal error.
-                // ...
-                e.getMessage();
-            }
-        });
-    }
-
-    private void startTranslate(FirebaseTranslator translator,String text){
-        translator.translate(text).addOnSuccessListener(new OnSuccessListener<String>() {
-            @Override
-            public void onSuccess(@NonNull String translatedText) {
-                // Translation successful.translatedText in hindi language - नमस्ते आप कैसे हैं
-                //outtxt.setText(translatedText);
-            }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Error.
-                // ...
-            }
-        });
-    }*/
 
    private void identifyLang() {
         instr=intxt.getText().toString();
@@ -131,6 +91,7 @@ public class Translation extends AppCompatActivity {
             case "de":
                 langCode=FirebaseTranslateLanguage.DE;
                 srclang.setText("German");
+                //outtxt.setText(langCode);
                 break;
             case "ms":
                 langCode=FirebaseTranslateLanguage.MS;
@@ -151,10 +112,10 @@ public class Translation extends AppCompatActivity {
             default:
                 langCode=0;
         }
-        translateText(langCode);
+       translateText(langCode);
     }
 
-    private void translateText(int langCode) {
+   private void translateText(int langCode) {
 
         try {
         FirebaseTranslatorOptions opts=new FirebaseTranslatorOptions.Builder().setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.EN).build();

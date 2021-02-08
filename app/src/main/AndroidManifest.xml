@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".BePolite"></activity>
+        <activity android:name=".Directions"></activity>
+        <activity android:name=".Ask_Questions" />
+        <activity android:name=".greetings" />
+        <activity android:name=".Greetings" />
+        <activity android:name=".BePolite" />
         <activity android:name=".CommonPhrases" />
         <activity android:name=".Verify" />
         <activity android:name=".Translation" />
