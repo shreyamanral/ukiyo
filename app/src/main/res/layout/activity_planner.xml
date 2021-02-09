@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plnnr"
+    tools:context=".Planner">
+
+    <ImageButton
+        android:id="@+id/p_to_cdsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bck_blk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:text="Planner"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_marginTop="250dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.88">
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <CheckBox
+                    android:id="@+id/cb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Chargers"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Adapters"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Passport"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Power Banks"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Medical Kit"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Torch"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Sunscreen"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Snacks"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Water Bottles"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <CheckBox
+                    android:id="@+id/cb10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:button="@drawable/chkbx_wht"
+                    android:fontFamily="@font/indie_flower"
+                    android:paddingStart="20dp"
+                    android:text="Toiletries"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/edit_itm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit"
+        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_itm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_itm"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/del_itm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/del_itm"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

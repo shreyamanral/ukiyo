@@ -56,5 +56,28 @@ public class CommonPhrases extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        bcktocd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,Common_Dashboard.class);
+                startActivity(i);
+            }
+        });
+        bcktodash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,Dashboard.class);
+                startActivity(i);
+            }
+        });
+
+        bcktoth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(CommonPhrases.this,Common_Dashboard.class);
+                startActivity(i);
+            }
+        });
     }
 }

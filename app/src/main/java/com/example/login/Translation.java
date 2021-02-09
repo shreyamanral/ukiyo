@@ -1,29 +1,31 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
-import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
-import com.google.firebase.ml.naturallanguage.languageid.FirebaseLanguageIdentification;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslator;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions;
+import com.google.mlkit.common.model.DownloadConditions;
+import com.google.mlkit.nl.translate.TranslateLanguage;
+import com.google.mlkit.nl.translate.Translator;
+import com.google.mlkit.nl.translate.TranslatorOptions;
 
 public class Translation extends AppCompatActivity {
 
-    private TextView srclang,outtxt;
-    private EditText intxt;
-    private ImageButton translateBtn;
-    private String instr;
+    TextView srclang,outtxt;
+    EditText intxt;
+    ImageButton translateBtn;
+    ImageView t_to_th;
+    Translator englishGermanTranslator;
+    String instr;
     private static final String TAG = "LangID";
 
     @Override
@@ -35,16 +37,74 @@ public class Translation extends AppCompatActivity {
         outtxt = (TextView) findViewById(R.id.outtext);
         intxt = (EditText) findViewById(R.id.inptxt);
         translateBtn = (ImageButton) findViewById(R.id.translate);
+        t_to_th=(ImageView)findViewById(R.id.t_to_th);
+
+        TranslatorOptions options =
+                new TranslatorOptions.Builder()
+                        .setSourceLanguage(TranslateLanguage.GERMAN)
+                        .setTargetLanguage(TranslateLanguage.ENGLISH)
+                        .build();
+        englishGermanTranslator = com.google.mlkit.nl.translate.Translation.getClient(options);
+        getLifecycle().addObserver(englishGermanTranslator);
 
         translateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                identifyLang();
+                checkmodel();
+            }
+        });
+
+        t_to_th.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Translation.this,Common_Dashboard.class);
+                startActivity(i);
             }
         });
     }
 
-   private void identifyLang() {
+    private void checkmodel() {
+        DownloadConditions conditions = new DownloadConditions.Builder()
+                .requireWifi()
+                .build();
+        englishGermanTranslator.downloadModelIfNeeded(conditions)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        translate(intxt.getText().toString());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Model couldn’t be downloaded or other internal error.
+                        // ...
+                        outtxt.setText("Model Not Downloaded");
+                    }
+                });
+    }
+
+    private void translate(String instr) {
+        englishGermanTranslator.translate(instr)
+                .addOnSuccessListener(new OnSuccessListener<String>() {
+                    @Override
+                    public void onSuccess(@NonNull String s) {
+                        srclang.setText("German");
+                        outtxt.setText("Translated Text: "+s);
+                    }
+                })
+                .addOnFailureListener(
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Error.
+                                // ...
+                                outtxt.setText("Not Translated");
+                            }
+                        });
+    }
+
+   /*private void identifyLang() {
         instr=intxt.getText().toString();
         FirebaseLanguageIdentification identifier = FirebaseNaturalLanguage.getInstance().getLanguageIdentification();
         identifier.identifyLanguage(instr).addOnSuccessListener(new OnSuccessListener<String>() {
@@ -137,5 +197,5 @@ public class Translation extends AppCompatActivity {
             e.printStackTrace();
         }
 
-    }
+    }*/
 }

@@ -8,16 +8,16 @@
     tools:context=".Translation">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/t_to_th"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bck_wht"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
-        android:background="@drawable/bck_wht" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <TextView
         android:id="@+id/textView"
@@ -61,7 +61,7 @@
         android:inputType="textCapSentences|textMultiLine"
         android:paddingVertical="75dp"
         android:textAlignment="center"
-        android:textColor="#2B2B2B"
+        android:textColor="#54ADCE"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

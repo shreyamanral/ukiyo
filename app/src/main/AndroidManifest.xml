@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Directions"></activity>
+        <activity android:name=".Planner"></activity>
+        <activity android:name=".Directions" />
         <activity android:name=".Ask_Questions" />
         <activity android:name=".greetings" />
         <activity android:name=".Greetings" />

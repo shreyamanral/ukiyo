@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Common_Dashboard extends AppCompatActivity {
 
-    ImageView tran,gotocmnphrs;
+    ImageView tran,gotocmnphrs,gotoplnr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class Common_Dashboard extends AppCompatActivity {
 
         tran=(ImageView)findViewById(R.id.translation);
         gotocmnphrs=(ImageView)findViewById(R.id.phrs);
+        gotoplnr=(ImageView)findViewById(R.id.plan);
 
         tran.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,14 @@ public class Common_Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(Common_Dashboard.this,CommonPhrases.class);
+                startActivity(i);
+            }
+        });
+
+        gotoplnr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(Common_Dashboard.this,Planner.class);
                 startActivity(i);
             }
         });

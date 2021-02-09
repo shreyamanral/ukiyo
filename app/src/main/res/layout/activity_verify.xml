@@ -13,14 +13,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/abhaya_libre_medium"
         android:text="Email Not Verified!"
-        android:visibility="invisible"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.182" />
 
     <Button
         android:id="@+id/ref"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <Button
         android:id="@+id/sngot"
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
+        app:layout_constraintVertical_bias="0.714" />
 
     <TextView
         android:id="@+id/tvmail"
@@ -52,7 +52,7 @@
         android:singleLine="true"
         android:text="shreya.manral@science.christuniversity.in"
         android:textColor="#FFFFFF"
-        android:textSize="19sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,9 +68,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/abhaya_libre_medium"
         android:text="Send Verification Email"
-        android:visibility="invisible"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="14sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
