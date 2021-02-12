@@ -1,12 +1,15 @@
 package com.example.login;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,15 +21,19 @@ import com.google.mlkit.nl.translate.TranslateLanguage;
 import com.google.mlkit.nl.translate.Translator;
 import com.google.mlkit.nl.translate.TranslatorOptions;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class Translation extends AppCompatActivity {
 
     TextView srclang,outtxt;
     EditText intxt;
-    ImageButton translateBtn;
+    ImageButton translateBtn,speak;
     ImageView t_to_th;
     Translator englishGermanTranslator;
     String instr;
     private static final String TAG = "LangID";
+    private final int REQ_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,7 @@ public class Translation extends AppCompatActivity {
         srclang = (TextView) findViewById(R.id.srclang);
         outtxt = (TextView) findViewById(R.id.outtext);
         intxt = (EditText) findViewById(R.id.inptxt);
+        speak = (ImageButton) findViewById(R.id.voc);
         translateBtn = (ImageButton) findViewById(R.id.translate);
         t_to_th=(ImageView)findViewById(R.id.t_to_th);
 
@@ -61,6 +69,33 @@ public class Translation extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        speak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak");
+                try {
+                    startActivityForResult(intent, REQ_CODE);
+                } catch (ActivityNotFoundException a) {
+                    Toast.makeText(getApplicationContext(), "Sorry your device not supported", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQ_CODE: {
+                if (resultCode == RESULT_OK && null != data) {
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    intxt.setText(result.get(0));
+                }
+                break;
+            }
+        }
     }
 
     private void checkmodel() {
@@ -90,7 +125,7 @@ public class Translation extends AppCompatActivity {
                     @Override
                     public void onSuccess(@NonNull String s) {
                         srclang.setText("German");
-                        outtxt.setText("Translated Text: "+s);
+                        outtxt.setText(s);
                     }
                 })
                 .addOnFailureListener(

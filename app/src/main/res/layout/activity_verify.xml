@@ -14,7 +14,7 @@
         android:fontFamily="@font/abhaya_libre_medium"
         android:text="Email Not Verified!"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="38sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
