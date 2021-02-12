@@ -15,7 +15,6 @@
         <activity android:name=".Directions" />
         <activity android:name=".Ask_Questions" />
         <activity android:name=".greetings" />
-        <activity android:name=".Greetings" />
         <activity android:name=".BePolite" />
         <activity android:name=".CommonPhrases" />
         <activity android:name=".Verify" />
@@ -50,6 +49,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <receiver android:name=".choose_country" />
     </application>
 
 </manifest>
