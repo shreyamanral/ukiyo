@@ -96,7 +96,7 @@
         android:id="@+id/thl"
         android:layout_width="31dp"
         android:layout_height="31dp"
-        android:background="@drawable/th_pln_icn_sel"
+        android:background="@drawable/th_pin_icn_sel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"

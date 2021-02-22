@@ -1,13 +1,20 @@
 package com.example.login;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,7 +29,7 @@ public class Dashboard extends AppCompatActivity {
     private FirebaseFirestore fstore;
     private static final String FIRE_LOG="Firelog";
 
-    //GoogleSignInClient mGoogleSignInClient;
+    GoogleSignInClient mGoogleSignInClient;
 
     FirebaseAuth fAuth;
     ImageView trahel;
@@ -39,13 +46,15 @@ public class Dashboard extends AppCompatActivity {
         signout=(ImageView) findViewById(R.id.signout_icn);
         gotothl=(ImageView) findViewById(R.id.thl);
         name=(TextView)findViewById(R.id.name);
-        //img=(ImageView)findViewById(R.id.perimg);
+        img=(ImageView)findViewById(R.id.perimg);
 
 
-        /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
-                .build();*/
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         trahel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +75,21 @@ public class Dashboard extends AppCompatActivity {
                         break;
                     // ...
                 }*/
-                FirebaseAuth.getInstance().signOut();
-                Intent i= new Intent(Dashboard.this, Login.class);
-                startActivity(i);
+                if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
+                    FirebaseAuth.getInstance().signOut();
+                    mGoogleSignInClient.signOut();
+                    Intent i= new Intent(Dashboard.this, LoginOptions.class);
+                    startActivity(i);
+                    finish();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "No user signed in", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
-       /* GoogleSignInAccount acct= GoogleSignIn.getLastSignedInAccount(this);
+       GoogleSignInAccount acct= GoogleSignIn.getLastSignedInAccount(this);
         if(acct!=null)
         {
             String personName=acct.getDisplayName();
@@ -82,7 +99,7 @@ public class Dashboard extends AppCompatActivity {
 
             name.setText(personName);
             Glide.with(this).load(String.valueOf(personPhoto)).into(img);
-        }*/
+        }
 
         fAuth = FirebaseAuth.getInstance();
         fstore= FirebaseFirestore.getInstance();

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,12 +31,7 @@ public class Login extends AppCompatActivity{
     TextView sn,fp;
     ImageButton b1;
     FirebaseAuth fAuth;
-    /*SignInButton signInButton;
-
-    GoogleSignInClient mGoogleSignInClient;
-
-    private static final String TAG = "GoogleActivity";
-    private static final int RC_SIGN_IN=9001;*/
+    SignInButton signInButton;
 
     private FirebaseAuth.AuthStateListener nAuthSListner;
 
@@ -60,14 +56,9 @@ public class Login extends AppCompatActivity{
         sn=(TextView)findViewById(R.id.gotosignup);
         fp=(TextView)findViewById(R.id.frgtpass);
 
-        /*signInButton=(SignInButton)findViewById(R.id.gsignin);
+        //signInButton=(SignInButton)findViewById(R.id.gsignin);
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);*/
 
         fAuth=FirebaseAuth.getInstance();
 
@@ -206,15 +197,17 @@ public class Login extends AppCompatActivity{
         /*signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.gsignin:
-                        signIn();
-                        break;
-                }
+                Intent i= new Intent(getApplicationContext(),LoginGoogle.class);
+                startActivity(i);
             }
         });*/
     }
 
+    /*switch (v.getId()){
+                    case R.id.gsignin:
+                        signIn();
+                        break;
+                        }*/
     /*private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);

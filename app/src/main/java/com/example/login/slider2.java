@@ -31,7 +31,7 @@ public class slider2 extends AppCompatActivity {
         sk2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(slider2.this,Login.class);
+                Intent i=new Intent(slider2.this,LoginOptions.class);
                 startActivity(i);
             }
         });

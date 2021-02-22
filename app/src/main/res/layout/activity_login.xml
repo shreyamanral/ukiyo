@@ -31,7 +31,7 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -46,7 +46,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp"  />
 
@@ -78,11 +78,6 @@
         android:textAlignment="textEnd"
         android:textColor="#E1E1E1"
         android:textSize="20sp" />
-
-    <!--<com.google.android.gms.common.SignInButton
-        android:id="@+id/gsignin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />-->
 
 
 

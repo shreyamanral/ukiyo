@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Planner"></activity>
+        <activity android:name=".LoginOptions"></activity>
+        <activity android:name=".Planner" />
         <activity android:name=".Directions" />
         <activity android:name=".Ask_Questions" />
         <activity android:name=".greetings" />
@@ -49,6 +50,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <receiver android:name=".choose_country" />
     </application>
 

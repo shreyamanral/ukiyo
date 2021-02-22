@@ -30,7 +30,7 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -46,7 +46,7 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -62,7 +62,7 @@
         android:importantForAutofill="no"
         android:inputType="date"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -78,7 +78,7 @@
         android:importantForAutofill="no"
         android:inputType="phone"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -94,7 +94,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:singleLine="true"
-        android:textAlignment="center"
+        android:paddingLeft="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
