@@ -24,7 +24,7 @@ public class slider4 extends AppCompatActivity {
         tolog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(slider4.this,LoginOptions.class);
+                Intent i=new Intent(slider4.this,Login.class);
                 startActivity(i);
             }
         });
@@ -32,7 +32,7 @@ public class slider4 extends AppCompatActivity {
         sk4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(slider4.this, LoginOptions.class);
+                Intent i=new Intent(slider4.this, Login.class);
                 startActivity(i);
             }
         });

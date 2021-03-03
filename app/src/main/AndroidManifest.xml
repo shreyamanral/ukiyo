@@ -19,7 +19,11 @@
         <activity android:name=".BePolite" />
         <activity android:name=".CommonPhrases" />
         <activity android:name=".Verify" />
-        <activity android:name=".Translation" />
+        <activity android:name=".Translation">
+            <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="ocr" />
+        </activity>
         <activity android:name=".slider4" />
         <activity android:name=".slider3" />
         <activity android:name=".slider2" />

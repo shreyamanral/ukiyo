@@ -90,8 +90,14 @@ public class Verify extends AppCompatActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Verify.this, Login.class);
-                startActivity(intent);
+                if(user.isEmailVerified()) {
+                    Intent intent = new Intent(Verify.this, Login.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(Verify.this,"Verify the Email First!",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

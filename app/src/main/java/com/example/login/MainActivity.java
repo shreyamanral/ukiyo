@@ -3,11 +3,9 @@ package com.example.login;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -39,16 +37,18 @@ public class MainActivity extends AppCompatActivity {
                     "(?=.*[a-z])"+
                     "(?=.*[A-Z])"+
                     "(?=.*[@#$%^&+=])"+
-                    ".{4,15}" +
+                    ".{8,15}" +
                     "$");
 
     private static final Pattern phone_PAT = Pattern.compile("^[0-9\\s]*$");
 
     private static final Pattern name_PAT = Pattern.compile("^[a-zA-Z\\s]*$");
 
+    private static final Pattern uname_PAT = Pattern.compile("^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
+
     int err=0;
     
-    EditText name, email, pass, dob, phnno;
+    EditText name, email, pass, usname, phnno;
     ImageButton btn;
     TextView loginpage;
     DatePickerDialog picker;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         name=(EditText)findViewById(R.id.name);
         email=(EditText)findViewById(R.id.email);
-        dob=(EditText)findViewById(R.id.dob);
+        usname=(EditText)findViewById(R.id.uname);
         phnno=(EditText)findViewById(R.id.phone);
         pass=(EditText)findViewById(R.id.password);
         btn=(ImageButton)findViewById(R.id.signup);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //datepicker
-        dob.setInputType(InputType.TYPE_NULL);
+        /*dob.setInputType(InputType.TYPE_NULL);
         dob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         }, year, month, day);
                 picker.show();
             }
-        });
+        });*/
 
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -121,6 +121,23 @@ public class MainActivity extends AppCompatActivity {
                     else if(!name_PAT.matcher(sname).matches())
                     {
                         name.setError("Incorrect Name!");
+                    }
+                }
+            }
+        });
+
+        usname.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus)
+                {
+                    String uname= usname.getText().toString();
+                    if(uname.trim().equals("")){
+                        usname.setError("Empty!!");
+                    }
+                    else if(!name_PAT.matcher(uname).matches())
+                    {
+                        usname.setError("Incorrect Username!");
                     }
                 }
             }
@@ -187,8 +204,13 @@ public class MainActivity extends AppCompatActivity {
                 final String semail=email.getText().toString();
                 final String sname=name.getText().toString();
                 final String sphone=phnno.getText().toString();
+                final String uname=usname.getText().toString();
                 if(sname.trim().equals("")){
                     name.setError("Name cannot be empty!");
+                    err++;
+                }
+                if(sname.trim().equals("")){
+                    usname.setError("Name cannot be empty!");
                     err++;
                 }
                 if(semail.isEmpty())
@@ -212,7 +234,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                //send verification mail
                                 FirebaseUser fuser=fAuth.getCurrentUser();
 
                                 //add data in the cloud
@@ -220,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
                                 DocumentReference docref=fstore.collection("Users").document(UserID);
                                 Map<String,Object> data =new HashMap<>();
                                 data.put("Email",semail);
+                                data.put("Username",uname);
                                 data.put("Password",spass);
                                 data.put("Name",sname);
                                 data.put("Phone",sphone);

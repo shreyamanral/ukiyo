@@ -1,7 +1,6 @@
 package com.example.login;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,11 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,14 +16,12 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import javax.annotation.Nullable;
-
 public class Dashboard extends AppCompatActivity {
 
     private FirebaseFirestore fstore;
     private static final String FIRE_LOG="Firelog";
 
-    GoogleSignInClient mGoogleSignInClient;
+    //GoogleSignInClient mGoogleSignInClient;
 
     FirebaseAuth fAuth;
     ImageView trahel;
@@ -49,18 +41,30 @@ public class Dashboard extends AppCompatActivity {
         img=(ImageView)findViewById(R.id.perimg);
 
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);*/
+
+        fAuth = FirebaseAuth.getInstance();
+        fstore= FirebaseFirestore.getInstance();
+        String UserID =fAuth.getCurrentUser().getUid();
 
         trahel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, choose_country.class);
                 startActivity(intent);
+            }
+        });
+
+        final DocumentReference docref = fstore.collection("Users").document(UserID);
+        docref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                name.setText(documentSnapshot.getString("Name"));
             }
         });
 
@@ -77,19 +81,21 @@ public class Dashboard extends AppCompatActivity {
                 }*/
                 if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
                     FirebaseAuth.getInstance().signOut();
-                    mGoogleSignInClient.signOut();
-                    Intent i= new Intent(Dashboard.this, LoginOptions.class);
+                    //mGoogleSignInClient.signOut();
+                    Intent i= new Intent(Dashboard.this, Login.class);
                     startActivity(i);
                     finish();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "No user signed in", Toast.LENGTH_SHORT).show();
+                    Intent i= new Intent(Dashboard.this, Login.class);
+                    startActivity(i);
                 }
 
             }
         });
 
-       GoogleSignInAccount acct= GoogleSignIn.getLastSignedInAccount(this);
+       /*GoogleSignInAccount acct= GoogleSignIn.getLastSignedInAccount(this);
         if(acct!=null)
         {
             String personName=acct.getDisplayName();
@@ -101,17 +107,7 @@ public class Dashboard extends AppCompatActivity {
             Glide.with(this).load(String.valueOf(personPhoto)).into(img);
         }
 
-        fAuth = FirebaseAuth.getInstance();
-        fstore= FirebaseFirestore.getInstance();
-        String UserID =fAuth.getCurrentUser().getUid();
-        final DocumentReference docref = fstore.collection("Users").document(UserID);
-        docref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                name.setText(documentSnapshot.getString("Name"));
-            }
-        });
-        /*fstore.collection("Users").document("one").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        fstore.collection("Users").document("one").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()){
