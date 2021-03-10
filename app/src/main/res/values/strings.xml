@@ -12,5 +12,5 @@
     <string name="logstr">Already have an account? Login</string>
     <string name="signout">Signout</string>
     <string name="textview">TextView</string>
-    <string name="username">Derek Doyle</string>
+    <string name="username">Dummy Username</string>
 </resources>

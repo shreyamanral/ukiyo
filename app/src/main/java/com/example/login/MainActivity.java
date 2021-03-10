@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     if(uname.trim().equals("")){
                         usname.setError("Empty!!");
                     }
-                    else if(!name_PAT.matcher(uname).matches())
+                    else if(!uname_PAT.matcher(uname).matches())
                     {
                         usname.setError("Incorrect Username!");
                     }

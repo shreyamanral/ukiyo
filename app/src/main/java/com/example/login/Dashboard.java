@@ -26,7 +26,7 @@ public class Dashboard extends AppCompatActivity {
     FirebaseAuth fAuth;
     ImageView trahel;
     TextView name;
-    ImageView img,gotoexp,gotothl,gotospin,gotoprf,signout;
+    ImageView gotoexp,gotothl,gotospin,gotoprf,signout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class Dashboard extends AppCompatActivity {
         signout=(ImageView) findViewById(R.id.signout_icn);
         gotothl=(ImageView) findViewById(R.id.thl);
         name=(TextView)findViewById(R.id.name);
-        img=(ImageView)findViewById(R.id.perimg);
 
 
         /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

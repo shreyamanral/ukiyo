@@ -31,6 +31,7 @@
         android:inputType="textEmailAddress"
         android:singleLine="true"
         android:paddingLeft="50dp"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -47,6 +48,7 @@
         android:inputType="textPersonName"
         android:singleLine="true"
         android:paddingLeft="50dp"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -55,7 +57,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/name_text"
+        android:background="@drawable/uname_text"
         android:ems="10"
         android:fontFamily="@font/abhaya_libre_medium"
         android:hint="Username"
@@ -63,6 +65,7 @@
         android:inputType="textEmailAddress"
         android:singleLine="true"
         android:paddingLeft="50dp"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -95,6 +98,7 @@
         android:inputType="phone"
         android:singleLine="true"
         android:paddingLeft="50dp"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
@@ -111,6 +115,7 @@
         android:inputType="textPassword"
         android:singleLine="true"
         android:paddingLeft="50dp"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="25sp" />
 
