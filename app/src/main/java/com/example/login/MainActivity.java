@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         name=(EditText)findViewById(R.id.name);
         email=(EditText)findViewById(R.id.email);
         usname=(EditText)findViewById(R.id.uname);
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         pass=(EditText)findViewById(R.id.password);
         btn=(ImageButton)findViewById(R.id.signup);
         loginpage=(TextView)findViewById(R.id.gotologin);
+
+
 
         loginpage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                     name.setError("Name cannot be empty!");
                     err++;
                 }
-                if(sname.trim().equals("")){
+                if(uname.trim().equals("")){
                     usname.setError("Name cannot be empty!");
                     err++;
                 }
@@ -266,9 +269,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
-
                 }
-
             }
         });
     }

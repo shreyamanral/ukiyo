@@ -37,6 +37,7 @@ public class Dashboard extends AppCompatActivity {
         trahel=(ImageView)findViewById(R.id.th);
         signout=(ImageView) findViewById(R.id.signout_icn);
         gotothl=(ImageView) findViewById(R.id.thl);
+        gotospin=(ImageView)findViewById(R.id.spglobe);
         name=(TextView)findViewById(R.id.name);
 
 
@@ -55,6 +56,14 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, choose_country.class);
+                startActivity(intent);
+            }
+        });
+
+        gotospin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Globe.class);
                 startActivity(intent);
             }
         });
