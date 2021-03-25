@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/plnnr"
+    android:background="#FCF0F0"
     tools:context=".Planner">
 
     <ImageButton
@@ -13,55 +13,57 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bck_blk"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        android:layout_margin="30dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abhaya_libre_medium"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
         android:text="Planner"
         android:textColor="#000000"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        android:textSize="26sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp"
+        android:text="Hey!
+Don’t forget to pack
+your stuff before leaving!"
+        android:textColor="#000000"
+        android:textSize="32sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:background="@drawable/plnrrect"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="20dp"/>
 
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="wrap_content"
         android:layout_height="350dp"
-        android:layout_marginTop="250dp"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17">
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="30dp"
+        android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+
             android:id="@+id/constraintLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.88">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="280dp"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
+                android:layout_marginLeft="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -79,149 +81,141 @@
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Adapters"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Passport"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Power Banks"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Medical Kit"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Torch"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Sunscreen"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Snacks"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Water Bottles"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/cb10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/indie_flower"
                     android:paddingStart="20dp"
                     android:text="Toiletries"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textSize="24sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <ImageButton
         android:id="@+id/add_itm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/add_itm"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintVertical_bias="0.97"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="665dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/add_itm" />
 
     <ImageButton
         android:id="@+id/del_itm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/del_itm"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintVertical_bias="0.97"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="665dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/del_itm" />
+</RelativeLayout>
