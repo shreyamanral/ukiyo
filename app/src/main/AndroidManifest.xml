@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Globe"></activity>
+        <activity android:name=".CountryRandom"></activity>
+        <activity android:name=".Globe" />
         <activity android:name=".LoginOptions" />
         <activity android:name=".Planner" />
         <activity android:name=".Directions" />
