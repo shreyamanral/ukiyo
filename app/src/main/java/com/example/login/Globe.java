@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -9,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Globe extends AppCompatActivity {
 
     ImageButton spin;
     LottieAnimationView globe;
     TextView spinstop;
-    int c=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,19 +28,20 @@ public class Globe extends AppCompatActivity {
         globe=(LottieAnimationView)findViewById(R.id.globe);
         spinstop=(TextView)findViewById(R.id.spinstop);
 
+
         spin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 globe.setSpeed(2);
-                if (c == 0) {
-                    globe.playAnimation();
-                    spinstop.setText("Stop");
-                    c = 1;
-                } else if (c == 1) {
-                    globe.pauseAnimation();
-                    spinstop.setText("Spin");
-                    c = 0;
-                }
+                globe.playAnimation();
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        Intent i;
+                        i = new Intent(Globe.this, CountryRandom.class);
+                        startActivity(i);
+                    }
+                },5000);
             }
         });
     }
