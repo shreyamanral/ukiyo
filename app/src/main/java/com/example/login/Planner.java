@@ -10,11 +10,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Planner extends AppCompatActivity {
 
@@ -22,6 +31,10 @@ public class Planner extends AppCompatActivity {
     CheckBox cb1,cb2,cb3,cb4,cb5,cb6,cb7,cb8,cb9,cb10,cb11,cb12,cb13,cb14,cb15,cb16,cb17,cb18,cb19,cb20;
     int x=10;
     List<String> listitms=new ArrayList<>();
+    FirebaseAuth fAuth;
+    private FirebaseFirestore fstore;
+    String TAG="Item Name";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,9 +64,10 @@ public class Planner extends AppCompatActivity {
         cb19=(CheckBox)findViewById(R.id.cb19);
         cb20=(CheckBox)findViewById(R.id.cb20);
 
+        fstore=FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+
         CheckBox cbarray[]={cb1,cb2,cb3,cb4,cb5,cb6,cb7,cb8,cb9,cb10,cb11,cb12,cb13,cb14,cb15,cb16,cb17,cb18,cb19,cb20};
-
-
 
         p_to_cdsh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +99,21 @@ public class Planner extends AppCompatActivity {
                         cbarray[x].setVisibility(View.VISIBLE);
 
                         //docref, add to database, items
+                        String UserID =fAuth.getCurrentUser().getUid();
+                        DocumentReference docref=fstore.collection("Users").document(UserID).collection("Planner_Items").document();
+                        Map<String,Object> data =new HashMap<>();
+                        data.put("items",str1);
+                        docref.set(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG,"Item Added");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG,"Item Not Added");
+                            }
+                        });
                         x++;
                     }
                 });

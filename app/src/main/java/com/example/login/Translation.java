@@ -40,7 +40,7 @@ public class Translation extends AppCompatActivity {
     EditText intxt;
     ImageButton translateBtn,speak,mcam;
     ImageView t_to_th;
-    Translator englishGermanTranslator;
+    Translator englishTranslator;
     String instr;
     Bitmap imageBitmap;
     InputImage image;
@@ -65,11 +65,11 @@ public class Translation extends AppCompatActivity {
 
         TranslatorOptions options =
                 new TranslatorOptions.Builder()
-                        .setSourceLanguage(TranslateLanguage.GERMAN)
+                        .setSourceLanguage(TranslateLanguage.ITALIAN)
                         .setTargetLanguage(TranslateLanguage.ENGLISH)
                         .build();
-        englishGermanTranslator = com.google.mlkit.nl.translate.Translation.getClient(options);
-        getLifecycle().addObserver(englishGermanTranslator);
+        englishTranslator = com.google.mlkit.nl.translate.Translation.getClient(options);
+        getLifecycle().addObserver(englishTranslator);
 
         translateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +144,7 @@ public class Translation extends AppCompatActivity {
         DownloadConditions conditions = new DownloadConditions.Builder()
                 .requireWifi()
                 .build();
-        englishGermanTranslator.downloadModelIfNeeded(conditions)
+        englishTranslator.downloadModelIfNeeded(conditions)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -162,11 +162,11 @@ public class Translation extends AppCompatActivity {
     }
 
     private void translate(String instr) {
-        englishGermanTranslator.translate(instr)
+        englishTranslator.translate(instr)
                 .addOnSuccessListener(new OnSuccessListener<String>() {
                     @Override
                     public void onSuccess(@NonNull String s) {
-                        srclang.setText("German");
+                        srclang.setText("Italian");
                         outtxt.setText(s);
                     }
                 })

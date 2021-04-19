@@ -27,11 +27,11 @@ public class Directions extends AppCompatActivity {
         sp5=(ImageView)findViewById(R.id.sd5);
         d_to_cp=(ImageButton)findViewById(R.id.d_to_cp);
 
-        mp1= MediaPlayer.create(getApplication(),R.raw.jap_left);
-        mp2=MediaPlayer.create(getApplication(),R.raw.jap_right);
-        mp3=MediaPlayer.create(getApplication(),R.raw.jap_turn);
-        mp4=MediaPlayer.create(getApplication(),R.raw.jap_straight);
-        mp5=MediaPlayer.create(getApplication(),R.raw.jap_across);
+        mp1= MediaPlayer.create(getApplication(),R.raw.itl_left);
+        mp2=MediaPlayer.create(getApplication(),R.raw.itl_right);
+        mp3=MediaPlayer.create(getApplication(),R.raw.itl_turn);
+        mp4=MediaPlayer.create(getApplication(),R.raw.itl_straight);
+        mp5=MediaPlayer.create(getApplication(),R.raw.itl_across);
 
         sp1.setOnClickListener(new View.OnClickListener() {
             @Override

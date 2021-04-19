@@ -27,11 +27,11 @@ public class Ask_Questions extends AppCompatActivity {
         sp5=(ImageView)findViewById(R.id.sa5);
         aq_to_cp=(ImageButton)findViewById(R.id.aq_to_cp);
 
-        mp1= MediaPlayer.create(getApplication(),R.raw.jap_whereis);
-        mp2=MediaPlayer.create(getApplication(),R.raw.jap_how);
-        mp3=MediaPlayer.create(getApplication(),R.raw.jap_who);
-        mp4=MediaPlayer.create(getApplication(),R.raw.jap_when);
-        mp5=MediaPlayer.create(getApplication(),R.raw.jap_what);
+        mp1= MediaPlayer.create(getApplication(),R.raw.itl_where_is);
+        mp2=MediaPlayer.create(getApplication(),R.raw.itl_how);
+        mp3=MediaPlayer.create(getApplication(),R.raw.itl_who);
+        mp4=MediaPlayer.create(getApplication(),R.raw.itl_when);
+        mp5=MediaPlayer.create(getApplication(),R.raw.itl_what);
 
         sp1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -39,11 +39,11 @@ public class BePolite extends choose_country{
         sp5=(ImageView)findViewById(R.id.sp5);
         gotocsdh=(ImageButton)findViewById(R.id.bck_cdsh);
 
-        mp1=MediaPlayer.create(getApplication(),R.raw.jap_please);
-        mp2=MediaPlayer.create(getApplication(),R.raw.jap_thankyou);
-        mp3=MediaPlayer.create(getApplication(),R.raw.jap_yes);
-        mp4=MediaPlayer.create(getApplication(),R.raw.jap_no);
-        mp5=MediaPlayer.create(getApplication(),R.raw.jap_imsorry);
+        mp1=MediaPlayer.create(getApplication(),R.raw.itl_please);
+        mp2=MediaPlayer.create(getApplication(),R.raw.itl_thankyou);
+        mp3=MediaPlayer.create(getApplication(),R.raw.itl_yes);
+        mp4=MediaPlayer.create(getApplication(),R.raw.itl_no);
+        mp5=MediaPlayer.create(getApplication(),R.raw.itl_sorry);
 
         sp1.setOnClickListener(new View.OnClickListener() {
             @Override

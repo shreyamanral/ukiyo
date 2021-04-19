@@ -27,11 +27,11 @@ public class greetings extends AppCompatActivity {
         sp5=(ImageView)findViewById(R.id.sg5);
         g_to_cp=(ImageButton)findViewById(R.id.g_to_cp);
 
-        mp1= MediaPlayer.create(getApplication(),R.raw.jap_hello);
-        mp2=MediaPlayer.create(getApplication(),R.raw.jap_howru);
-        mp3=MediaPlayer.create(getApplication(),R.raw.jap_cu);
-        mp4=MediaPlayer.create(getApplication(),R.raw.jap_gn);
-        mp5=MediaPlayer.create(getApplication(),R.raw.jap_gm);
+        mp1= MediaPlayer.create(getApplication(),R.raw.itl_hello);
+        mp2=MediaPlayer.create(getApplication(),R.raw.itl_howru);
+        mp3=MediaPlayer.create(getApplication(),R.raw.itl_seeyou);
+        mp4=MediaPlayer.create(getApplication(),R.raw.itl_goodnight);
+        mp5=MediaPlayer.create(getApplication(),R.raw.itl_goodmorning);
 
         sp1.setOnClickListener(new View.OnClickListener() {
             @Override

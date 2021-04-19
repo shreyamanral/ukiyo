@@ -57,7 +57,6 @@ public class Login extends AppCompatActivity{
         fp=(TextView)findViewById(R.id.frgtpass);
 
 
-
         fAuth=FirebaseAuth.getInstance();
 
         nAuthSListner= new FirebaseAuth.AuthStateListener() {

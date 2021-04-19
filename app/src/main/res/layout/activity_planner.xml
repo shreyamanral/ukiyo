@@ -356,17 +356,9 @@ your stuff before leaving!"
 
     <ImageButton
         android:id="@+id/add_itm"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="510dp"
         android:layout_marginTop="665dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/add_itm" />
-
-    <ImageButton
-        android:id="@+id/del_itm"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="665dp"
-        android:layout_marginLeft="210dp"
-        android:background="@drawable/del_itm" />
 </RelativeLayout>
